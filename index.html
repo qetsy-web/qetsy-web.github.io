@@ -7,28 +7,27 @@
 </head>
 <body>
 
-  <!-- Header modular -->
-  <div id="header-placeholder"></div>
-  <script>
-    fetch('components/header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header-placeholder').innerHTML = data;
-        // Cargar nav dentro del header
-        fetch('components/nav.html')
-          .then(res => res.text())
-          .then(navData => {
-            document.getElementById('nav-placeholder').innerHTML = navData;
-          });
-      });
-  </script>
+<body>
+
+  <!-- Header -->
+  <div class="header-container">
+    <div class="logo">
+      <a href="/">Qetsy Web</a>
+    </div>
+    <nav id="nav-placeholder">
+      <a href="#blog">Blog</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
 
   <!-- Main content -->
   <main>
     <!-- Bienvenida -->
     <section class="section">
       <h2>Bienvenido a Qetsy Web</h2>
-      <p>Aquí encontrarás escritos, proyectos, servicios, contenido gratuito y mucho más. Todo modular y escalable.</p>
+      <p>Aquí encontrarás escritos, proyectos, servicios, contenido gratuito y mucho más. Todo modular y escalable. Diseño funcional que celebra la geometría y la honestidad estructural.</p>
     </section>
 
     <!-- Destacados del Blog -->
@@ -37,22 +36,22 @@
       <div id="blog-cards-container"></div>
       <script>
         const blogEntries = [
-          { title: "Entrada 1", description: "Resumen de la primera entrada", url: "blog/entradas/001.txt" },
-          { title: "Entrada 2", description: "Resumen de la segunda entrada", url: "blog/entradas/002.txt" }
+          { title: "Entrada 1", description: "Resumen de la primera entrada del blog con contenido interesante", url: "#" },
+          { title: "Entrada 2", description: "Resumen de la segunda entrada con más información relevante", url: "#" },
+          { title: "Entrada 3", description: "Tercera entrada con contenido destacado y análisis profundo", url: "#" }
         ];
-        fetch('components/card.html')
-          .then(res => res.text())
-          .then(cardTemplate => {
-            const container = document.getElementById('blog-cards-container');
-            blogEntries.forEach(item => {
-              const card = document.createElement('div');
-              card.innerHTML = cardTemplate;
-              card.querySelector('.card-title').textContent = item.title;
-              card.querySelector('.card-desc').textContent = item.description;
-              card.querySelector('.card-link').href = item.url;
-              container.appendChild(card);
-            });
-          });
+
+        const blogContainer = document.getElementById('blog-cards-container');
+        blogEntries.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <div class="card-title">${item.title}</div>
+            <div class="card-desc">${item.description}</div>
+            <a href="${item.url}" class="card-link">Leer más</a>
+          `;
+          blogContainer.appendChild(card);
+        });
       </script>
     </section>
 
@@ -62,21 +61,47 @@
       <div id="shop-cards-container"></div>
       <script>
         const shopItems = [
-          { title: "Objeto físico 1", description: "Descripción corta del producto", url: "shop/productos/1.html" },
-          { title: "Servicio 1", description: "Descripción breve del servicio", url: "shop/servicios/1.html" }
+          { title: "Objeto físico 1", description: "Descripción detallada del primer producto disponible", url: "#" },
+          { title: "Servicio 1", description: "Descripción completa del servicio profesional ofrecido", url: "#" }
         ];
-        fetch('components/card.html')
-          .then(res => res.text())
-          .then(cardTemplate => {
-            const container = document.getElementById('shop-cards-container');
-            shopItems.forEach(item => {
-              const card = document.createElement('div');
-              card.innerHTML = cardTemplate;
-              card.querySelector('.card-title').textContent = item.title;
-              card.querySelector('.card-desc').textContent = item.description;
-              card.querySelector('.card-link').href = item.url;
-              container.appendChild(card);
-            });
-          });
+
+        const shopContainer = document.getElementById('shop-cards-container');
+        shopItems.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `
+            <div class="card-title">${item.title}</div>
+            <div class="card-desc">${item.description}</div>
+            <a href="${item.url}" class="card-link">Ver detalles</a>
+          `;
+          shopContainer.appendChild(card);
+        });
       </script>
-    </
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div class="footer-container">
+    <p>&copy; 2025 Qetsy Web. Diseño Bauhaus-Ecobrutalista.</p>
+    <div>
+      <a href="#privacidad">Privacidad</a>
+      <a href="#terminos">Términos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+
+  <script>
+    // Dark mode detection and application
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      if (event.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    });
+  </script>
+
+</body>
