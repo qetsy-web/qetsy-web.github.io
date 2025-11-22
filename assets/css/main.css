@@ -1,3 +1,157 @@
+/* ===== General ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header nav a {
+  color: #fff;
+  margin-left: 15px;
+}
+
+/* ===== Main ===== */
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+main h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+main p {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* ===== Secciones de destacados ===== */
+.section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.section h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+/* ===== Botones ===== */
+button {
+  margin-top: 40px;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Cards ===== */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #fff;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.card-link {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header, main, footer {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  main h2 {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    padding: 12px;
+  }
+}
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+/* ===== Footer ===== */
+footer {
+  background-color: #222;
+  background-color: #004999;
+}
+
+  background-color: #0066cc;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+
+
 .header-container {
   display: flex;
   justify-content: space-between;
