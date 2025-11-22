@@ -1,0 +1,33 @@
+<!--
+  Modo de uso:
+
+  1. En cada página donde quieras incluir el footer, agregá este contenedor:
+     
+     <div id="footer-placeholder"></div>
+
+  2. Luego agregá este script (ajustando la ruta según corresponda):
+     
+     <script>
+       fetch('../components/footer.html')
+         .then(res => res.text())
+         .then(data => {
+           document.getElementById('footer-placeholder').innerHTML = data;
+         });
+     </script>
+
+  3. El footer se cargará automáticamente y podés actualizarlo solo modificando
+     este archivo, afectando todas las páginas que lo incluyan.
+-->
+
+<footer>
+  <div class="footer-container">
+    <p>&copy; 2025 Qetsy Web - Todo modular, todo tuyo</p>
+    <p>
+      <a href="../index.html">Inicio</a> |
+      <a href="../blog/index.html">Blog</a> |
+      <a href="../shop/index.html">Tienda</a> |
+      <a href="../free/index.html">Contenido Free</a> |
+      <a href="../about.html">Sobre mí</a>
+    </p>
+  </div>
+</footer>

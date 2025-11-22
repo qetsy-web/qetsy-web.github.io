@@ -1,0 +1,40 @@
+<!--
+  Modo de uso:
+
+  1. Colocá un contenedor en tu página donde quieras mostrar las tarjetas:
+     
+     <div id="cards-container"></div>
+
+  2. Usá JavaScript para clonar esta tarjeta y llenarla dinámicamente. Por ejemplo:
+
+     <script>
+       // Datos de ejemplo
+       const items = [
+         { title: "Mi primera entrada", description: "Resumen de la entrada...", url: "blog/entradas/001.txt" },
+         { title: "Objeto físico 1", description: "Descripción del producto", url: "shop/productos/1.html" }
+       ];
+
+       const container = document.getElementById("cards-container");
+       fetch('../components/card.html')
+         .then(res => res.text())
+         .then(cardTemplate => {
+           items.forEach(item => {
+             const card = document.createElement('div');
+             card.innerHTML = cardTemplate;
+             card.querySelector('.card-title').textContent = item.title;
+             card.querySelector('.card-desc').textContent = item.description;
+             card.querySelector('.card-link').href = item.url;
+             container.appendChild(card);
+           });
+         });
+     </script>
+
+  3. Así, podés reutilizar la misma estructura de tarjeta para cualquier tipo de contenido
+     (blog, tienda, free content) y actualizar el diseño en un solo lugar.
+-->
+
+<div class="card">
+  <h3 class="card-title">Título de ejemplo</h3>
+  <p class="card-desc">Descripción breve de ejemplo.</p>
+  <a class="card-link" href="#">Leer más</a>
+</div>
